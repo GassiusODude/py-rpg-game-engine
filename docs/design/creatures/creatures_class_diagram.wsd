@@ -1,0 +1,27 @@
+@startuml
+class Speed {
+    type : {FLY, WALK, SWIM, BURROW}
+    distance:int
+}
+class Creature {
+    + attributes:int[]
+    + speed:Speed[]
+    + passive:Traits
+    + actions:Action[]
+    + size : {Tiny, Small, Medium, Large, Huge}
+    + type : {aberration, humanoid, monstrosity}
+    + alignment : {LG, LN, LE, NG, TN, NE, CG, CN, CE, Unaligned}
+    + languages : String[]
+    + Senses {Darkvision, Perception, Tremorsense}
+    + armor_class : AC_MODS[]
+}
+class Monster {
+
+}
+class Character {
+    class : Class[]
+    skills : Skills[]
+}
+Creature <|-down- Monster
+Creature <|-down- Character
+@enduml

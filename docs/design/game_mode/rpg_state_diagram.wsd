@@ -1,0 +1,22 @@
+@startuml
+[*] -down-> CharacterSelect
+CharacterSelect -> CharacterCreation
+CharacterCreation -[dotted]-> CharacterSelect
+CharacterSelect -down-> LoadStory
+LoadStory -down-> WorldMap
+WorldMap -down-> Combat : Encounter
+WorldMap -right-> Dungeon : Enter Dungeon
+WorldMap -left-> Town
+Dungeon -down-> Combat
+Town -down-> Combat
+Town -down-> Event
+WorldMap -down-> Event
+Dungeon -down-> Event
+Event -> Combat
+Event -[dotted]-> WorldMap
+Event -[dotted]-> Town
+Event -[dotted]-> Dungeon
+Combat -[dotted]-> WorldMap
+Combat -[dotted]-> Town
+Combat -[dotted]-> Dungeon
+@enduml
